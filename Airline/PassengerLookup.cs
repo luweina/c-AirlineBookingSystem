@@ -34,14 +34,12 @@ namespace Airline
 
         private void dgvOutput_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //get the row number that was clicked
             var index = e.RowIndex;
 
-            //get the passengerID from the clicked row and pass it to the command
+          
             int selectedID = Convert.ToInt32(dgvOutput.Rows[index].Cells[0].Value);
 
-            //Select all the passenger information from all three tables that matches 
-            //the passengerID of the passenger that was clicked
+           
             using (var conn = new OleDbConnection(DatabaseObjects.ConnectionString))
             {
                 conn.Open();
@@ -65,7 +63,7 @@ namespace Airline
                 Close();
             }
 
-            //execute command and place results to DataTable and pass it to the EditDelete form
+           
         }
     }
 }
